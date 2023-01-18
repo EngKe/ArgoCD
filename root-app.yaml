@@ -16,10 +16,10 @@ spec:
   - group: argoproj.io
     jsonPointers:
     - /status
-    kind: ApplicationSet
+    kind: Application
   project: default
   source:
-    path: appset
+    path: argoapps
     repoURL: https://github.com/EngKe/ArgoCD.git
     targetRevision: main
     directory:
