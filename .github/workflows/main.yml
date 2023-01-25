@@ -29,6 +29,6 @@ jobs:
         git commit -m "Apply image name changes"
         git status
         git push
-        gh pr create --base main --head dev
+        gh pr create --base main --head dev --title "The bug is fixed" --body "Everything works again"
       env:
         GH_TOKEN: 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
