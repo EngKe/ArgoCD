@@ -28,6 +28,6 @@ jobs:
         git add .
         git commit -m "Apply image name changes"
         git status
-        git push origin dev
+        git push
         git request-pull dev origin main
 
