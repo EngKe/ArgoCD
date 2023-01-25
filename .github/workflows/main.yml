@@ -8,12 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Update Image Version
-      uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.PAT }}
-    - name: Checkout
       uses: actions/checkout@v3
       with:
+        token: ${{ secrets.PAT }}
         ref: dev
 
     - name: Update Image Version
@@ -30,6 +27,6 @@ jobs:
         git config --global user.name "${{ secrets.USERNAME }}"
         git add .
         git commit -m "Apply image name changes"
-        git push origin dev --force
+        git push -u ${{ secrets.EMAIL }} -p ${{ secrets.PAT }} origin dev
         git request-pull dev origin main
 
