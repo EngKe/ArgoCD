@@ -9,8 +9,8 @@ jobs:
     steps:
     - name: Update Image Version
       uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT }}
+      with:
+        token: ${{ secrets.PAT }}
 
     - name: Update Image Version
       id: imgupd
