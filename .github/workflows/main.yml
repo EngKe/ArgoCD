@@ -10,7 +10,7 @@ jobs:
     
     - name: clone repo
       run: |
-        git clone https://${{ secrets.PAT }}@github.com/EngKe/ArgoCD.git
+        git clone https://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@github.com/EngKe/ArgoCD.git
         git checkout dev
         
     - name: Update Image Version
@@ -21,8 +21,8 @@ jobs:
     
     - name: open pr
       run: |
-        git config --global user.email "${{ secrets.EMAIL }}"
-        git config --global user.name "${{ secrets.USERNAME }}"
+        git config --global user.email "kesginengin@gmail.com"
+        git config --global user.name "EngKe"
         git add .
         git commit -m "Apply image name changes"
         git status
