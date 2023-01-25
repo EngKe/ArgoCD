@@ -10,7 +10,10 @@ jobs:
     
     - name: clone repo
       run: |
-        git clone https://github.com/EngKe/ArgoCD.git -u EngKe -p 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
+        git config --global user.email "kesginengin@gmail.com"
+        git config --global user.name "EngKe"
+        git clone https://github.com/EngKe/ArgoCD.git
+        cd ArgoCD
         git checkout dev
         
     - name: Update Image Version
