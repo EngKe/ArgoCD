@@ -11,13 +11,16 @@ jobs:
       uses: actions/checkout@v2
       with:
         token: ${{ secrets.PAT }}
+        path: development
 
     - name: Update Image Version
       id: imgupd
       uses: mikefarah/yq@master
       with:
         cmd: yq eval '.spec.template.spec.containers[0].image = "${{ github.event.client_payload.image }}"' -i pythonapp/deployment.yaml
-      
-    - uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: Apply image name changes
+    
+    - name: open pr
+      run: |
+        git add .
+        git commit -m "Apply image name changes"
+        git push -u origin development
