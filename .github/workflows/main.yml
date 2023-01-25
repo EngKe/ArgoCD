@@ -24,7 +24,10 @@ jobs:
     
     - name: open pr
       run: |
+        git config --global user.email "${{ secrets.EMAIL }}"
+        git config --global user.name "${{ secrets.USERNAME }}"
         git add .
         git commit -m "Apply image name changes"
         git push -u origin dev
         git request-pull dev origin main
+
