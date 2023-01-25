@@ -23,4 +23,5 @@ jobs:
       run: |
         git add .
         git commit -m "Apply image name changes"
-        git push -u origin development
+        git push -u origin dev
+        git request-pull dev origin main
