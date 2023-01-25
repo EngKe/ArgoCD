@@ -22,6 +22,7 @@ jobs:
     
     - name: open pr
       run: |
+        cd ArgoCD
         git config --global user.email "kesginengin@gmail.com"
         git config --global user.name "EngKe"
         git add .
