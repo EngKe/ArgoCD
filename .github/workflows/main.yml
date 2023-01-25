@@ -10,7 +10,7 @@ jobs:
     
     - name: clone repo
       run: |
-        git clone https://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@github.com/EngKe/ArgoCD.git
+        git clone https://@github.com/EngKe/ArgoCD.git -u EngKe -p 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
         git checkout dev
         
     - name: Update Image Version
