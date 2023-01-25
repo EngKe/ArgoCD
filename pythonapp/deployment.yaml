@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: python
-          image: kesginengin/pythonapp:11
+          image: kesginengin/pythonapp:23
           ports:
             - containerPort: 5002
