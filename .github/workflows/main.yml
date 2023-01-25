@@ -29,5 +29,4 @@ jobs:
         git commit -m "Apply image name changes"
         git status
         git push
-        git request-pull -p blabla main https://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@github.com/EngKe/ArgoCD.git dev
-
+        gh pr create --base main --head dev
