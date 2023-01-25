@@ -18,7 +18,7 @@ jobs:
       id: imgupd
       uses: mikefarah/yq@master
       with:
-        cmd: yq eval '.spec.template.spec.containers[0].image = "${{ github.event.client_payload.image }}"' -i pythonapp/deployment.yaml 
+        cmd: yq eval '.spec.template.spec.containers[0].image = "${{ github.event.client_payload.image }}"' -i ArgoCD/pythonapp/deployment.yaml 
     
     - name: open pr
       run: |
