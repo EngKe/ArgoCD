@@ -10,9 +10,7 @@ jobs:
     
     - name: clone repo
       run: |
-        git config --global user.email "kesginengin@gmail.com"
-        git config --global user.name "EngKe"
-        git clone https://github.com/EngKe/ArgoCD.git
+        git clone https://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@github.com/EngKe/ArgoCD.git
         cd ArgoCD
         git checkout dev
         
