@@ -27,6 +27,7 @@ jobs:
         git config --global user.name "${{ secrets.USERNAME }}"
         git add .
         git commit -m "Apply image name changes"
-        git push -u ${{ secrets.EMAIL }} -p ${{ secrets.PAT }} origin dev
+        git status
+        git push origin dev
         git request-pull dev origin main
 
