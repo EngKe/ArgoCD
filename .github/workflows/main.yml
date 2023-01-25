@@ -11,13 +11,16 @@ jobs:
       uses: actions/checkout@v2
       with:
         token: ${{ secrets.PAT }}
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
         path: dev
 
     - name: Update Image Version
       id: imgupd
       uses: mikefarah/yq@master
       with:
-        cmd: yq eval '.spec.template.spec.containers[0].image = "${{ github.event.client_payload.image }}"' -i pythonapp/deployment.yaml
+        cmd: yq eval '.spec.template.spec.containers[0].image = "${{ github.event.client_payload.image }}"' -i pythonapp/deployment.yaml 
     
     - name: open pr
       run: |
