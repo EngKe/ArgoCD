@@ -11,21 +11,24 @@ jobs:
     - name: clone repo
       run: |
         git clone https://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@github.com/EngKe/ArgoCD.git
+        cd ArgoCD
         git checkout dev
         
     - name: Update Image Version
       id: imgupd
       uses: mikefarah/yq@master
       with:
-        cmd: yq eval '.spec.template.spec.containers[0].image = "${{ github.event.client_payload.image }}"' -i pythonapp/deployment.yaml 
+        cmd: yq eval '.spec.template.spec.containers[0].image = "${{ github.event.client_payload.image }}"' -i ArgoCD/pythonapp/deployment.yaml 
     
     - name: open pr
       run: |
+        cd ArgoCD
         git config --global user.email "kesginengin@gmail.com"
         git config --global user.name "EngKe"
         git add .
         git commit -m "Apply image name changes"
         git status
         git push
-        git request-pull dev origin main
-
+        gh pr create --base main --head dev --title "The bug is fixed" --body "Everything works again"
+      env:
+        GH_TOKEN: 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
