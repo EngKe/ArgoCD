@@ -1,0 +1,21 @@
+name: 'Clone Git Repo'
+description: 'this action clones git repo'
+inputs:
+  repo:
+    description: 'link of the repo without https'
+    required: true
+  key:
+    description: 'acces token for the repo'
+    required: true
+  branch:
+    description: 'change the branch of the repo'
+    required: false
+    default: 'main'
+runs:
+  using: 'composite'
+  steps:
+    - run: |
+        git clone https://${{ inputs.key }}@${{ inputs.repo }}
+        cd ArgoCD
+        git checkout ${{ inputs.branch }}
+      shell: bash
