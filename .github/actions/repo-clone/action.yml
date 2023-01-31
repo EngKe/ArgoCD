@@ -15,7 +15,6 @@ runs:
   using: 'composite'
   steps:
     - run: |
-        git clone https://${{ inputs.key }}@${{ inputs.repo }} my-repo
-        cd my-repo
+        git clone https://${{ inputs.key }}@${{ inputs.repo }} .
         git checkout ${{ inputs.branch }}
       shell: bash
