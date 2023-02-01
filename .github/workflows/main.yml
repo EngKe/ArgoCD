@@ -9,7 +9,7 @@ jobs:
     steps:
       
     - name: clone repo
-      uses: EngKe/ArgoCD/.github/actions/clone-repo@dev
+      uses: EngKe/ArgoCD/.github/actions/repo-clone@dev
       with:
         repo: github.com/EngKe/ArgoCD.git
         key: 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
