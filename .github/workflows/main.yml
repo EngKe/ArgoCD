@@ -9,18 +9,17 @@ jobs:
     steps:
       
     - name: clone repo
-      uses: ./.github/actions/repo-clone
+      uses: EngKe/ArgoCD/.github/actions/clone-repo@dev
       with:
         repo: github.com/EngKe/ArgoCD.git
         key: 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
         branch: dev
         
     - name: Update Image Version
-      id: imgupd
-      uses: mikefarah/yq@master
+      uses: EngKe/ArgoCD/.github/actions/update-image@dev
       with:
-        cmd: yq eval '.spec.template.spec.containers[0].image = "${{ github.event.client_payload.image }}"' -i ArgoCD/pythonapp/deployment.yaml 
-    
+        image: ${{ github.event.client_payload.image }}
+        file: deployment.yaml
     - name: open pr
       run: |
         cd ArgoCD
