@@ -1,0 +1,15 @@
+name: 'Update İmage'
+description: 'this action update images in a file'
+inputs:
+  image:
+    description: 'the name of the image'
+    required: true
+  file:
+    description: 'the manifest file'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - run: |
+        sed -i "s+image:.*+image: ${{ inputs.image }}+g" ${{ inputs.file }}
+      shell: bash
