@@ -19,7 +19,7 @@ jobs:
       uses: EngKe/ArgoCD/.github/actions/update-image@dev
       with:
         image: ${{ github.event.client_payload.image }}
-        file: deployment.yaml
+        file: pythonapp/deployment.yaml
     - name: open pr
       run: |
         cd ArgoCD
