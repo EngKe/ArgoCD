@@ -22,7 +22,6 @@ jobs:
         file: pythonapp/deployment.yaml
     - name: open pr
       run: |
-        cd ArgoCD
         git add .
         git commit -m "Apply image name changes"
         git status
