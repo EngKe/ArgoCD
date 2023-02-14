@@ -23,6 +23,8 @@ jobs:
         
     - name: open pr
       uses: EngKe/ArgoCD/.github/actions/open-pr@dev
+      env:
+        GH_TOKEN: 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
       with:
         email: kesginengin@gmail.com
         username: EngKe
