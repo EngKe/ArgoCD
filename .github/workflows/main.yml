@@ -22,8 +22,6 @@ jobs:
         file: pythonapp/deployment.yaml
     - name: open pr
       run: |
-        git config --global user.email "kesginengin@gmail.com"
-        git config --global user.name "EngKe"
         git add .
         git commit -m "Apply image name changes"
         git status
